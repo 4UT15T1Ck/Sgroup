@@ -1,95 +1,129 @@
-body
-{
-    font-size: 20px;
-    width: 800px;
-    font-size: 16px;
+body {
+    max-width: 800px;
+    min-width: 400px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #EEEEEE;
+    background-color: #eeeeee;
     color: rgb(33, 32, 31);
 }
-*
-{
-    font-family:Arial, Helvetica, sans-serif;
+* {
+    font-family: Arial, Helvetica, sans-serif;
 }
-span
-{
-    color: rgb(86, 68, 68);
-    font-size: 12px;
-    padding-top: 2px;
-    margin-top: 0px;
+
+.intro-bar{
+    display: flex;
+    min-width: 100px;
+    justify-content: space-between;
+    padding: 5px 10px;
 }
-p
-{
-    color: rgb(54, 46, 46);
-    line-height: 1.6;
-}
-.icon
-{
-    float: right;
-    width: 20px;
-    height: 20px;
-    margin-top: 20px;
-    margin-right: 10px;
-}
-img
-{
+
+.intro-bar button{
     display: inline-block;
-    width: 300px;
-    height: 350px;
-    margin-right: 10px;
-}
-h1
-{
-    padding-bottom: 20px;
-}
-h6
-{
-    text-transform: uppercase;
-    margin-bottom: 30px;
-    padding-bottom: 3px;
-    display: inline;
-    border-bottom: solid red;
-    border-width: 2px;
-}
-.stat-number
-{
-    margin-right: 75px;
-    display: inline;
-    margin-top: 0px;
-    color: rgb(223, 79, 79); 
-    margin-bottom: 1px;;
-}
-.profile
-{
-    padding: 30px 0px;
-}
-.side
-{
-    display: inline;
-    width: 55%;
-    float: right;
-}
-.small-button
-{
-    display: inline-block;
+    justify-self: left;
     background-color: black;
     color: white;
     border-radius: 3px;
     border: 5px solid black;
     font-size: medium;
     padding: 0px 5px;
-    margin-bottom: 10px;
+    margin: 5px 0px;
+}
+
+i{
+    margin: 3px;
+}
+span {
+    color: rgb(86, 68, 68);
+    font-size: 12px;
+    padding-top: 2px;
     margin-top: 0px;
 }
-button
-{
-    font-size:x-small;
+p {
+    display: inline;
+    color: rgb(61, 55, 55);
+    line-height: 1.6;
+}
+
+h1 {
+    padding-bottom: 20px;
+}
+h6 {
     text-transform: uppercase;
-    color:crimson;
+    margin-bottom: 40px;
+    padding-bottom: 3px;
+    display: inline;
+    border-bottom: solid red;
+    border-width: 2px;
+}
+.stat-number {
+    display: inline;
+    margin-top: 0px;
+    color: rgb(223, 79, 79);
+    margin-bottom: 1px;
+}
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 0px;
+    justify-content: center;
+    gap: 7%;
+}
+.profile img{
+    display: inline-block;
+    object-fit: contain;
+    width: 45%;
+}
+.profile.side {
+    width: 50%;
+    display: inline-block;
+}
+.stat{
+    display: flex;
+    justify-content: start;
+    gap: 10%;
+}
+
+button {
+    font-size: x-small;
+    text-transform: uppercase;
+    color: crimson;
     border: 1.5px solid;
     border-radius: 30px;
-    margin-top: 30px;
+    margin: 30px 50px 0px;
     padding: 10px 25px;
 }
-  
+
+.container{
+    margin: 50px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 20px;
+}
+.experience{
+    display: inline-block;
+    position: relative;
+    width: 45%;    
+}
+.experience p{
+    margin: 3px 0px;
+    display: block;
+    font-size: 10px;
+}
+.skill-type{
+    display: inline-block;
+    position: relative;
+    width: 45%;
+}
+.skill-type p{
+    font-size: 10px;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 5px;
+    margin-bottom: 0px;
+    display: inline-block;
+    border: 1px solid rgba(128, 128, 128, 0.482);
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
