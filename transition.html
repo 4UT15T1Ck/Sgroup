@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+            integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <style>
+            body {
+                background-color: gray;
+            }
+            .transit-container{
+                margin-top: 50px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                justify-self: center;
+                gap: 30px;
+                width: 80%;
+                min-width: 500px;
+            }
+            .container {
+                justify-self: center;
+                width: 480px;
+                height: 360px;
+                position: relative;
+                background-size: contain;
+                background-repeat: no-repeat;
+                text-align: center;
+                overflow: hidden;
+            }
+
+            .container.trans1 {
+                background-image: url("https://tympanus.net/Development/HoverEffectIdeas/img/14.jpg");
+                transition: all ease-in-out 0.5s;
+            }
+
+            .container.trans2 {
+                background-image: url("https://tympanus.net/Development/HoverEffectIdeas/img/17.jpg");
+                transition: all linear 0.25s;
+            }
+
+            .container:hover .grad {
+                opacity: 1;
+            }
+            .square {
+                position: relative;
+                height: 50px;
+                width: 50px;
+                border: 2px solid white;
+                top: 50%;
+                left: 50%;
+                transform: translate(-70.7%);
+                rotate: 45deg;
+                opacity: 0;
+                transition: all linear 0.25s;
+            }
+
+            .container:hover .corner1 {
+                top: 42%;
+                left: 45%;
+            }
+            .container:hover .corner2 {
+                top: 42%;
+                left: 55%;
+            }
+            .container:hover .corner3 {
+                top: 57%;
+                left: 45%;
+            }
+            .container:hover .corner4 {
+                top: 57%;
+                left: 55%;
+            }
+
+            .corner1 {
+                position: absolute;
+                top: 20%;
+                left: 25%;
+                transform: translate(-50%, -50%);
+            }
+            .corner2 {
+                position: absolute;
+                top: 20%;
+                left: 75%;
+                transform: translate(-50%, -50%);
+            }
+            .corner3 {
+                position: absolute;
+                top: 79%;
+                left: 25%;
+                transform: translate(-50%, -50%);
+            }
+            .corner4 {
+                position: absolute;
+                top: 79%;
+                left: 75%;
+                transform: translate(-50%, -50%);
+            }
+            .container:hover .square {
+                height: 200px;
+                width: 200px;
+                opacity: 1;
+            }
+            i {
+                opacity: 0;
+                color: aliceblue;
+                transition: all linear 0.25s;
+            }
+            .container:hover i {
+                opacity: 1;
+            }
+            i:hover {
+                color: rgb(161, 159, 159);
+            }
+            .grad {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                background: linear-gradient(
+                    rgba(255, 255, 255, 0.2559),
+                    rgba(64, 61, 73, 0.695)
+                );
+            }
+            .container:hover .text {
+                color: aliceblue;
+                top: 30%;
+            }
+            .text {
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+                    "Helvetica Neue", sans-serif;
+                font-weight: 100;
+                font-size: 28px;
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                transform: translate(-50%);
+                color: rgb(61, 56, 56);
+                transition: all ease 0.5s;
+            }
+
+            .text2 {
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 100;
+                font-size: 12px;
+                opacity: 0;
+                position: absolute;
+                bottom: -40px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: aliceblue;
+                transition: all ease 0.5s;
+            }
+
+            .container:hover .text2 {
+                bottom: 0%;
+                opacity: 1;
+            }
+
+            .text3 {
+                color: aliceblue;
+                position: absolute;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+                    "Helvetica Neue", sans-serif;
+                font-weight: 100;
+                font-size: 40px;
+                opacity: 1;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: all linear 0.25s;
+            }
+            .container:hover .text3 {
+                font-size: 30px;
+                opacity: 0;
+            }
+        </style>
+        <title>Transition</title>
+    </head>
+    <body>
+        <div class="transit-container">
+            <div class="container trans1">
+                <div class="grad"></div>
+                <p class="text">HOLY<b>SADIE</b></p>
+                <p class="text2">
+                    SADIE NEVER TOOK HER EYES OFF ME. <br />SHE HAS A DARK SOUL
+                </p>
+            </div>
+            <div class="container trans2">
+                <p class="text3">
+                    TENDER <br />
+                    <b>HERA</b>
+                </p>
+                <div class="square"></div>
+                <i class="fa-regular fa-file-image fa-2x corner2"></i>
+                <i class="fa-regular fa-file-zipper fa-2x corner3"></i>
+                <i class="fa-regular fa-file-code fa-2x corner4"></i>
+                <i class="fa-regular fa-file fa-2x corner1"></i>
+            </div>
+        </div>
+    </body>
+</html>
