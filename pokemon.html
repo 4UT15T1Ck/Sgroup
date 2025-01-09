@@ -1,156 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f8f8f8;
-            text-align: center;
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pokemon</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #f8f8f8;
+                text-align: center;
+            }
 
-        h1 {
-            font-weight: 300;
-            margin-top: 40px;
-            color: #413f73;
-        }
+            h1 {
+                font-weight: 300;
+                margin-top: 40px;
+                color: #413f73;
+            }
 
-        .search-bar {
-            margin: 20px auto;
-            width: 40%;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: 300;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
+            button {
+                padding: 16px;
+                border-radius: 35px;
+                border: 2px solid #ddd;
+                background-color: #ffffff;
+                color: #6f6f6f;
+                font-size: 16px;
+                font-weight: 300;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            }
 
-        .search-bar:focus {
-            border: 2px solid rgb(152, 164, 220);
-            outline: none;
-        }
+            button:hover {
+                background-color: #f2f2f2;
+            }
 
-        .pokemon-container {
-            display: flex;
-            margin: 20px 20px;
-            flex-wrap: wrap;
-            justify-self: center;
-            justify-content: center;
-            gap: 10px;
-            width: 80%;
-        }
+            button:active {
+                border: 2px solid rgb(152, 164, 220);
+            }
 
-        .pokemon-card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin-top: 10px;
-            padding: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 150px;
-            text-align: center;
-        }
+            .search-bar {
+                margin: 20px auto;
+                width: 40%;
+                padding: 15px;
+                border: 2px solid #ddd;
+                border-radius: 25px;
+                font-size: 16px;
+                font-weight: 300;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            }
 
-        .pokemon-card:hover{
-            transform: translateY(-10px);
-            transition: 0.2s;
-        }
+            .search-bar:focus {
+                border: 2px solid rgb(152, 164, 220);
+                outline: none;
+            }
 
-        img {
-            width: 130px;
-            height: 130px;
-        }
+            .pokemon-container {
+                display: flex;
+                margin: 20px 20px;
+                flex-wrap: wrap;
+                justify-self: center;
+                justify-content: center;
+                gap: 10px;
+                width: 80%;
+            }
 
-        .name {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 10px 0;
-        }
+            .pokemon-card {
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                margin-top: 10px;
+                padding: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 150px;
+                text-align: center;
+                transition: 0.2s;
+            }
 
-        .type {
-            display: inline-block;
-            margin: 5px 5px;
-            padding: 3px 5px;
-            border-radius: 5px;
-            font-size: 12px;
-            font-weight: bold;
-        }
+            .pokemon-card:hover {
+                transform: translateY(-10px);
+            }
 
-        .grass {
-            background-color: #78c850;
-            color: rgb(19, 18, 18);
-        }
+            img {
+                width: 130px;
+                height: 130px;
+            }
 
-        .poison {
-            background-color: #a040a0;
-            color: rgb(19, 18, 18);
-        }
+            .name {
+                font-size: 18px;
+                font-weight: bold;
+                margin: 10px 0;
+            }
 
-        .fire {
-            background-color: #f08030;
-            color: rgb(19, 18, 18);
-        }
+            .type {
+                display: inline-block;
+                margin: 5px 5px;
+                padding: 3px 5px;
+                border-radius: 5px;
+                font-size: 12px;
+                font-weight: bold;
+            }
 
-        .flying {
-            background-color: #a890f0;
-            color: rgb(19, 18, 18);
-        }
-    </style>
-</head>
-<body>
-    <h1>Pokemon API</h1>
-    <input type="text" class="search-bar" placeholder="Search some Pokemon...">
+            .Grass {
+                background-color: #78c850;
+                color: rgb(19, 18, 18);
+            }
 
-    <div class="pokemon-container">
+            .Poison {
+                background-color: #a040a0;
+                color: rgb(19, 18, 18);
+            }
 
-        <div class="pokemon-card">
-            <p>#1</p>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur">
-            <div class="name">Bulbasaur</div>
-            <div class="type grass">Grass</div>
-            <div class="type poison">Poison</div>
-        </div>
+            .Fire {
+                background-color: #f08030;
+                color: rgb(19, 18, 18);
+            }
 
-        <div class="pokemon-card">
-            <p>#2</p>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" alt="Ivysaur">
-            <div class="name">Ivysaur</div>
-            <div class="type grass">Grass</div>
-            <div class="type poison">Poison</div>
-        </div>
-
-        <div class="pokemon-card">
-            <p>#3</p>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png" alt="Venusaur">
-            <div class="name">Venusaur</div>
-            <div class="type grass">Grass</div>
-            <div class="type poison">Poison</div>
-        </div>
-
-        <div class="pokemon-card">
-            <p>#4</p>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander">
-            <div class="name">Charmander</div>
-            <div class="type fire">Fire</div>
-        </div>
-
-        <div class="pokemon-card">
-            <p>#5</p>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png" alt="Charmeleon">
-            <div class="name">Charmeleon</div>
-            <div class="type fire">Fire</div>
-        </div>
-
-        <div class="pokemon-card">
-            <p>#6</p>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" alt="Charizard">
-            <div class="name">Charizard</div>
-            <div class="type fire">Fire</div>
-            <div class="type flying">Flying</div>
-        </div>
-    </div>
-</body>
+            .Flying {
+                background-color: #a890f0;
+                color: rgb(19, 18, 18);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Pokemon API</h1>
+        <input
+            type="text"
+            class="search-bar"
+            placeholder="Search some Pokemon..."
+        />
+        <button onclick="show_pokemon()">Load Infor</button>
+        <div class="pokemon-container"></div>
+    </body>
+    <script src="./pokemon.js"></script>
 </html>
