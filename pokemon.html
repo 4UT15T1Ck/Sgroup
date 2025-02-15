@@ -17,23 +17,15 @@
                 color: #413f73;
             }
 
-            button {
-                padding: 16px;
-                border-radius: 35px;
-                border: 2px solid #ddd;
-                background-color: #ffffff;
-                color: #6f6f6f;
-                font-size: 16px;
-                font-weight: 300;
-                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            button:hover {
-                background-color: #f2f2f2;
-            }
-
-            button:active {
-                border: 2px solid rgb(152, 164, 220);
+            .loading {
+                display: none;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 60px;
+                font-weight: 100;
+                color: #413f73;
             }
 
             .search-bar {
@@ -96,37 +88,47 @@
                 border-radius: 5px;
                 font-size: 12px;
                 font-weight: bold;
+                color: rgb(19, 18, 18);
             }
 
-            .Grass {
+            .grass {
                 background-color: #78c850;
-                color: rgb(19, 18, 18);
             }
 
-            .Poison {
+            .poison {
                 background-color: #a040a0;
-                color: rgb(19, 18, 18);
             }
 
-            .Fire {
+            .fire {
                 background-color: #f08030;
-                color: rgb(19, 18, 18);
             }
 
-            .Flying {
+            .flying {
                 background-color: #a890f0;
-                color: rgb(19, 18, 18);
+            }
+
+            .water {
+                background-color: lightblue;
+            }
+
+            .bug {
+                background-color: lightgreen;
+            }
+
+            .normal {
+                background-color: lightgray;
             }
         </style>
     </head>
     <body>
         <h1>Pokemon API</h1>
+        <p class="loading">Loading Pokemons...</p>
         <input
+            value=""
             type="text"
             class="search-bar"
             placeholder="Search some Pokemon..."
         />
-        <button onclick="show_pokemon()">Load Infor</button>
         <div class="pokemon-container"></div>
     </body>
     <script src="./pokemon.js"></script>
